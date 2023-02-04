@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Scrapping - <%-username%></title>
+
+  <%- include('./partials/head-tailwind') %>
+</head>
+
+<body class="container">
+  <div class="max-w-[80%] mx-auto">
+    <h1 class="font-bold text-2xl"><%-username%></h1>
+
+    <div class="my-6 grid gap-4 grid-cols-4">
+      <%for(let image of images){%>
+        <a href=<%-image.src%> target="_blank">
+          <img crossorigin="anonymous" src="<%-image.src%>" alt="<%-image.alt%>" class="w-full h-[200px]" />
+        </a>
+        <%}%>
+    </div>
+  </div>
+</body>
+
+</html>
